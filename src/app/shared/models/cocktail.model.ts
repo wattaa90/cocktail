@@ -1,12 +1,10 @@
+import {Ingredient} from "./ingredient.model";
+
 export class Cocktail {
-
-  public name: string;
-  public desc : string;
-  public img : string;
-
-  constructor(name: string, desc: string, img: string) {
-    this.name = name;
-    this.desc = desc;
-    this.img = img;
-  }
+  constructor(
+    public name: string,
+    public desc: string,
+    public img: string,
+    public ingredients?: Ingredient[]
+  ) {}
 }

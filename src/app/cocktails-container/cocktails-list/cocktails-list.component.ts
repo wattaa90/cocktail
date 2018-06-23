@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Cocktail} from "../../shared/models/cocktail.model";
+import {CocktailService} from "../../shared/services/cocktail.service";
 
 @Component({
   selector: 'app-cocktails-list',
@@ -8,17 +9,19 @@ import {Cocktail} from "../../shared/models/cocktail.model";
 })
 export class CocktailsListComponent implements OnInit {
 
-  @Input() public cocktails : Cocktail[];
-  @Output() public choisir: EventEmitter<number> = new EventEmitter<number>();
+  public cocktails : Cocktail[];
+  public activeCocktail: number;
 
-  constructor() { }
+  constructor(private cocktailService: CocktailService) { }
 
   public choisirCocktail(index: number): void {
-    console.log(index);
-    this.choisir.emit(index);
+    this.activeCocktail = index;
+    this.cocktailService.selectCocktail(index);
   }
 
   ngOnInit() {
+    this.cocktailService.cocktails.subscribe((cocktails: Cocktail[]) =>
+    {this.cocktails = cocktails});
   }
 
 }
