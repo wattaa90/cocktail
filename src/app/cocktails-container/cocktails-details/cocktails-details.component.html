@@ -1,11 +1,22 @@
 <div class="row"></div>
-  <div class="col-5">
+  <div class="col-4">
     <img class="img-fluid" style="max-height: 200px;" [src]="cocktail.img" [alt]="cocktail.name"/>
     <h3 class="col-8">{{ cocktail.name}}</h3>
   </div>
 <div class="row">
   <p class="col-12"> {{cocktail.desc}} </p>
 </div>
+
+<div class="row">
+  <p class="col-12"> Ingredients </p>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let ingredient of cocktail.ingredients">
+      {{ingredient.name}}
+      <span class="badge badge-info badge-pill ml-auto">{{ingredient.quantity}}</span>
+    </li>
+  </ul>
+</div>
 <div class="row">
   <button class="btn btn-success"> Editer cocktail</button>
+  <button class="btn btn-secondary ml-auto" (click)="ajouterAuPanier(cocktail.ingredients)"> Ajouter au  panier</button>
 </div>
