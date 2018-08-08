@@ -10,14 +10,9 @@ import {CocktailService} from "../../shared/services/cocktail.service";
 export class CocktailsListComponent implements OnInit {
 
   public cocktails : Cocktail[];
-  public activeCocktail: number;
 
   constructor(private cocktailService: CocktailService) { }
 
-  public choisirCocktail(index: number): void {
-    this.activeCocktail = index;
-    this.cocktailService.selectCocktail(index);
-  }
 
   ngOnInit() {
     this.cocktailService.cocktails.subscribe((cocktails: Cocktail[]) =>

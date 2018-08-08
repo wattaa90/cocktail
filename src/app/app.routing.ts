@@ -7,6 +7,7 @@ const APP_ROUTE: Route[] = [
   {path : '', redirectTo: 'cocktails', pathMatch: 'full'},
   {path : 'panier', component: PanierComponent},
   {path : 'cocktails', component: CocktailsContainerComponent, children: [
+      {path: '', component: CocktailsDetailsComponent},
       {path: ':index', component: CocktailsDetailsComponent}
     ]},
 ];
