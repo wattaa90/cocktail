@@ -12,6 +12,7 @@ import { PanierComponent } from './panier/panier.component';
 import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
 import {AppRouting} from "./app.routing";
 import {PanierService} from "./shared/services/panier.service";
+import { CocktailEditComponent } from './cocktails-container/cocktail-edit/cocktail-edit.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {PanierService} from "./shared/services/panier.service";
     CocktailsContainerComponent,
     ActiveDirective,
     PanierComponent,
-    IngredientsListComponent
+    IngredientsListComponent,
+    CocktailEditComponent
   ],
   imports: [
     BrowserModule,

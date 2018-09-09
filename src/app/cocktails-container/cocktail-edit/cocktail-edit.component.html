@@ -1,0 +1,17 @@
+<div class="container">
+  <form formGroup='cocktailForm'>
+    <div>
+      <input class="form-control" formControlName="nom" type="text" placeholder="nom">
+    </div>
+    <div formArrayName='ingredients' class="form-group row" *ngFor="let ingredient of cocktailForm.controls.ingredients.controls; let i=index">
+        <div class="row">
+          <input class="form-control" type="text" formControlName="i">
+          <button class="btn-danger" type="reset" (click)="supprimerIngredient(i)"></button>
+      </div>
+    </div>
+
+    <!--<button (submit)="save()"></button>-->
+  </form>
+  <button class="btn btn-primary" (click)="ajouterIngredient()">Ajouter ingredient</button>
+
+</div>
