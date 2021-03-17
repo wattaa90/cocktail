@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { ActiveDirective } from './shared/directives/active.directive';
 
-import {AppRouting} from './app.routing';
 import {PanierService} from './shared/services/panier.service';
 import {CocktailModule} from './features/cocktail/cocktail.module';
 import {LoginModule} from './features/login/login.module';
 import {PanierModule} from './features/panier/panier.module';
+import {RouterModule} from '@angular/router';
+import {APP_ROUTE} from './app.routing';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import {PanierModule} from './features/panier/panier.module';
   ],
   imports: [
     BrowserModule,
-    AppRouting,
+    RouterModule.forRoot(APP_ROUTE),
     CocktailModule, LoginModule, PanierModule
   ],
   providers: [PanierService],
