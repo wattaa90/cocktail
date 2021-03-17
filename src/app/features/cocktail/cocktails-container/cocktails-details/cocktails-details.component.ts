@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Cocktail} from '../../shared/models/cocktail.model';
-import {CocktailService} from '../../shared/services/cocktail.service';
-import {Ingredient} from '../../shared/models/ingredient.model';
-import {PanierService} from '../../shared/services/panier.service';
+
 import {ActivatedRoute, Params} from '@angular/router';
+import {Cocktail} from '../../../../shared/models/cocktail.model';
+import {CocktailService} from '../../../../shared/services/cocktail.service';
+import {PanierService} from '../../../../shared/services/panier.service';
+import {Ingredient} from '../../../../shared/models/ingredient.model';
 
 @Component({
   selector: 'app-cocktails-details',

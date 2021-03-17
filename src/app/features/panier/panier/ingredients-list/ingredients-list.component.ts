@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Ingredient} from "../../shared/models/ingredient.model";
-import {PanierService} from "../../shared/services/panier.service";
-import {Subscription} from "rxjs/Subscription";
+
+import {Subscription} from 'rxjs/Subscription';
+import {Ingredient} from '../../../../shared/models/ingredient.model';
+import {PanierService} from '../../../../shared/services/panier.service';
 
 @Component({
   selector: 'app-ingredients-list',
@@ -10,7 +11,7 @@ import {Subscription} from "rxjs/Subscription";
 })
 export class IngredientsListComponent implements OnInit, OnDestroy {
 
-  public ingredients: Ingredient[] = [new Ingredient("Lemon", 2)];
+  public ingredients: Ingredient[] = [new Ingredient('Lemon', 2)];
   private subscription: Subscription;
 
 
@@ -21,7 +22,7 @@ export class IngredientsListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.panierService.panier.subscribe((ingredients: Ingredient[]) => {
       this.ingredients = ingredients;
-    })
+    });
   }
 
   ngOnDestroy() {
