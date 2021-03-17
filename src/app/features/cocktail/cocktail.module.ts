@@ -6,7 +6,7 @@ import {CocktailsContainerComponent} from './cocktails-container/cocktails-conta
 import {CocktailEditComponent} from './cocktails-container/cocktail-edit/cocktail-edit.component';
 import {RouterModule} from '@angular/router';
 import {HeaderComponent} from './cocktails-container/header/header.component';
-import {COCKTAILS_ROUTEs} from './cocktails-container/cocktails.routes';
+import {COCKTAILS_ROUTEs} from './cocktails.routes';
 
 @NgModule({
   imports: [
